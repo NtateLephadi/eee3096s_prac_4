@@ -10,5 +10,4 @@ potentiometer=MCP3008(0)
 print(potentiometer.values)
 
 temperature_sensor=MCP3008(2)
-print(potentiometer.value)
-      
+print(temperature_sensor.value)
