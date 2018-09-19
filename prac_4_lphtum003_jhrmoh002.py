@@ -25,10 +25,10 @@ while True:
     current_voltage=potentiometer.voltage
     current_light=light_sensor.value * 100
     current_temperature=yield(temperature_sensor.value * 3.3 - 0.5) * 100
-    
-    display_time=time.strftime("%H:%M:%S", time.localtime)    
+
+    display_time=time.strftime("%H:%M:%S", time.localtime)
     display_frequency=str(datetime.timedelta(seconds=frequency))
-    
+
     while(reset.is_pressed):
         print("-10%s -10%s -10%s -10%s -10%s" % ("Time", "Timer", "Pot", "Temp", "Light"))
         frequency=0.5
@@ -51,7 +51,6 @@ while True:
         for i in range (5):
             print("10%s 10%s 10%fV 10%fC 10%f%" % (display_time, display_frequency, current_voltage, current_temperature, current_light))
             time.sleep(frequency)
-            
+
     print("10%s 10%s 10%fV 10%fC 10%f%" % (display_time, display_frequency, current_voltage, current_temperature, current_light))
     time.sleep(frequency)
-    
